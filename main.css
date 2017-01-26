@@ -5,9 +5,13 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background-image: url("images/diamond_pattern.png");
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  background-image: url("images/diamond_pattern_x2.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  height: 100vh;
 }
 .container{
   width: 600px;
@@ -15,11 +19,12 @@ body {
   box-shadow: 0 9px 25px 0 rgba(0, 0, 0, 0.35);
   margin:100px auto;
   background-color: rgb(255, 249, 0);
+  background-position: left;
 }
 .square {
   float: left;
-  width: 40px;
-  height: 40px;
+  width: 37.5px;
+  height: 37.5px;
   border: 1px solid #000;
 }
 #modal {
