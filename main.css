@@ -5,6 +5,9 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  background-image: url("images/diamond_pattern.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .container{
   width: 600px;
@@ -13,10 +16,10 @@ body {
   margin:100px auto;
   background-color: rgb(255, 249, 0);
 }
-.tiles {
+.square {
   float: left;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #000;
 }
 #modal {

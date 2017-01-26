@@ -1,19 +1,22 @@
 $(document).ready(function(){
 
   openModal();
-  closeModal();
 
   $('#make_grid').click(function(){
-    $('.titles').remove();
+    clearGrid();
     createGrid();
+    closeModal();
+    $('.square').hover(function(){
+      $(this).css({"background-color": "black"});
+    });
   });
 
-  for(i = 0; i < 576; i++){
-      $('.container').append("<div class='tiles'></div>");
+  for(i = 0; i < 225; i++){
+      $('.container').append("<div class='square'></div>");
   }
-  $('.tiles').mouseenter(function(){
+  $('.square').hover(function(){
     $(this).css({"background-color": "black"});
-  })
+  });
 });
 
 
@@ -27,16 +30,25 @@ function openModal(){
   });
 }
 function closeModal(){
-  $(window).click(function(event){
-    if(event.target === modal){
-      $(modal).fadeOut(1000);
-      console.log('cleared');
-    }
-  });
+    $(modal).fadeOut(1000);
 }
 function createGrid(){
-  var size = $('#grid').val();
-  for(i = 0; i < size; i++){
-      $('.container').append("<div class='tiles'></div>");
+  var size = $('#grid_value').val();
+  console.log(size);
+  var widthHeight = 600 / size;
+  console.log(widthHeight);
+  var tiles = size * size;
+  console.log(tiles);
+
+  for(i = 0; i < tiles; i++){
+      $('.container').append("<div class='square'></div>");
+      $('.square').css({
+        'width': widthHeight + "px",
+        'height': widthHeight + "px",
+      });
   }
+}
+function clearGrid(){
+  var grid = $('.square');
+  grid.detach();
 }
